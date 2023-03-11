@@ -17,12 +17,12 @@ public class BuscaBinariaRecursiva {
 
     private static int buscaBinariaRecursiva(int [] array, int x, int left, int right){
 
-        int middle = (left + right) / 2;
-
         //Quando esquerda for maior que direita, retornar - 1
         if(left > right){
             return -1;
         }
+
+        int middle = (left + right) / 2;
 
         //Quando o do meio for o certo, retornar index
         if(array[middle] == x){
@@ -30,13 +30,13 @@ public class BuscaBinariaRecursiva {
         }
 
         //Quando estiver na direita, usar recursão
-        else if (array[middle] < x) {
-            return buscaBinariaRecursiva(array, x, middle, right);
+        else if (x < array[middle]) {
+            return buscaBinariaRecursiva(array, x, left, middle - 1);
         }
 
         //Quando estiver na direita, usar recursão
         else{
-            return buscaBinariaRecursiva(array, x, left, middle);
+            return buscaBinariaRecursiva(array, x, middle + 1, right);
         }
     }
 }

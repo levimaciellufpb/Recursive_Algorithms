@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         int[] A = { 8, 10, 6, 2, 9, 5 };
-        int elemento = 0;
+        int elemento = 8;
         BuscaBinariaRecursiva buscaBinaria = new BuscaBinariaRecursiva();
         int index = BuscaBinariaRecursiva.buscaBinariaRecursiva(A, elemento);
 
